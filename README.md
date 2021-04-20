@@ -1,5 +1,7 @@
 # Spring-API-Jwt
 
+jwt token ile authorize işlemi ve buna bağlı olarak diğer işlemler gerçekleştirilir
+
 Kullanılanlar
 - Spring
 - - spring-jpa
