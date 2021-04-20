@@ -1,6 +1,6 @@
 # Spring-API-Jwt
 
-<font size="10"><b>jwt token ile authorize işlemi ve buna bağlı olarak diğer işlemler gerçekleştirilir</b></font>
+<b>jwt token ile authorize işlemi ve buna bağlı olarak diğer işlemler gerçekleştirilir</b>
 
 Kullanılanlar
 - Spring
