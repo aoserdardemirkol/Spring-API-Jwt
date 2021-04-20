@@ -22,4 +22,4 @@ Araç Tipi, Araç Adı, Kapladığı Alan
 - Tip : 6 - Tır -  8 Birim;	
 
 
-![github.small](https://raw.githubusercontent.com/aoserdardemirkol/Spring-API-Jwt/pictures/authorized.png)
+![github.small](https://raw.githubusercontent.com/aoserdardemirkol/Spring-API-Jwt/master/pictures/authorized.png)
