@@ -21,9 +21,17 @@ Araç Tipi, Araç Adı, Kapladığı Alan
 - Tip : 5 - Otobüs - 5 Birim;
 - Tip : 6 - Tır -  8 Birim;	
 
-![github.small](https://raw.githubusercontent.com/aoserdardemirkol/Spring-API-Jwt/master/pictures/unauthorized.png)
+token oluşturulmadan önce unauthorized hatası verilir
 
 ![github.small](https://raw.githubusercontent.com/aoserdardemirkol/Spring-API-Jwt/master/pictures/unauthorized2.png)
+
+jwt-create ile token oluşturulur
+
+![github.small](https://raw.githubusercontent.com/aoserdardemirkol/Spring-API-Jwt/master/pictures/unauthorized.png)
+
+token authorize kısmından 
+
+- Bearer {token} olarak yazılır.
 
 ![github.small](https://raw.githubusercontent.com/aoserdardemirkol/Spring-API-Jwt/master/pictures/bearer.png)
 
