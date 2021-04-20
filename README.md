@@ -29,6 +29,8 @@ jwt-create ile token oluşturulur
 
 ![github.small](https://raw.githubusercontent.com/aoserdardemirkol/Spring-API-Jwt/master/pictures/unauthorized.png)
 
+![github.small](https://raw.githubusercontent.com/aoserdardemirkol/Spring-API-Jwt/master/pictures/unauthorized3.png)
+
 Token authorize kısmından 
 
 - Bearer {token} olarak yazılır.
