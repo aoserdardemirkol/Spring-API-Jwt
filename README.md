@@ -21,5 +21,14 @@ Araç Tipi, Araç Adı, Kapladığı Alan
 - Tip : 5 - Otobüs - 5 Birim;
 - Tip : 6 - Tır -  8 Birim;	
 
+![github.small](https://raw.githubusercontent.com/aoserdardemirkol/Spring-API-Jwt/master/pictures/unauthorized.png)
+
+![github.small](https://raw.githubusercontent.com/aoserdardemirkol/Spring-API-Jwt/master/pictures/unauthorized2.png)
+
+![github.small](https://raw.githubusercontent.com/aoserdardemirkol/Spring-API-Jwt/master/pictures/bearer.png)
+
+![github.small](https://raw.githubusercontent.com/aoserdardemirkol/Spring-API-Jwt/master/pictures/bearer2.png)
 
 ![github.small](https://raw.githubusercontent.com/aoserdardemirkol/Spring-API-Jwt/master/pictures/authorized.png)
+
+![github.small](https://raw.githubusercontent.com/aoserdardemirkol/Spring-API-Jwt/master/pictures/authorized2.png)
