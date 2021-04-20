@@ -1,6 +1,6 @@
 # Spring-API-Jwt
 
-jwt token ile authorize işlemi ve buna bağlı olarak diğer işlemler gerçekleştirilir
+<b>jwt token ile authorize işlemi ve buna bağlı olarak diğer işlemler gerçekleştirilir</b>
 
 Kullanılanlar
 - Spring
