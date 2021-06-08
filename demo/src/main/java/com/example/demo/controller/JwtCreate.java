@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.payload.response.JwtResponse;
+import com.example.demo.payload.resquest.JwtRequest;
 import com.example.demo.security.jwt.JwtUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -13,10 +14,8 @@ import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.Objects;
 import static org.springframework.http.HttpStatus.OK;
 
@@ -35,9 +34,6 @@ public class JwtCreate {
     @ApiOperation(value = "Token Oluşturma", authorizations = { @Authorization(value="apiKey") })
     public ResponseEntity<?> cToken() throws Exception{
         authenticate("username", "password");
-
-        final UserDetails userDetails = jwtInMemoryUserDetailsService
-                .loadUserByUsername("username");
 
         final String token = jwtUtil.generateToken("username");
         return new ResponseEntity(new JwtResponse(token), OK);

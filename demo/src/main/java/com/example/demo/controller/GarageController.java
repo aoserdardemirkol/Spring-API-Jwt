@@ -67,22 +67,34 @@ public class GarageController {
     }
 
     @ApiOperation(value = "Araç girişi yapılır", authorizations = { @Authorization(value="apiKey") })
-    @PostMapping("/giris/{tip}/{plaka}")
-    public ResponseEntity<Garage> createIslem(@PathVariable int tip, @PathVariable String plaka){
+    @PostMapping("/giris")
+    public ResponseEntity<Garage> createIslem(@RequestBody Garage garage){
+        // Veri girişi yapılmadan önce veritabanında bulunan garagealan tablosunda değer olup olmadığı kontrol edildi.
         startFirst();
-        Optional<Garage> garageByPlaka = garagerepo.findByPlaka(plaka);
+        // Plaka ya göre daha önceden aracın giriş yapıp yapmadığı kontrol edildimesi için garagerepo.findByPlaka() tanımlandı
+        Optional<Garage> garageByPlaka = garagerepo.findByPlaka(garage.getPlaka());
 
-        if (getAracTip(tip, plaka).getAlan() > garaj.getGarajBoyut())
+        // throw new GirisNotAcceptableException
+        // throw new AracAlreadyExistsException
+        // throw new TanımlıGarajNotExistsException gibi exceptionlar özelleştirldi.
+        if (getAracTip(garage.getTip(), garage.getPlaka()).getAlan() > garaj.getGarajBoyut())
             throw new GirisNotAcceptableException("Garajda yer yok önce çıkış yapılmalı");
         else if (garageByPlaka.isPresent())
-            throw new AracAlreadyExistsException(plaka + " plakalı araç zaten garajda...");
+            throw new AracAlreadyExistsException(garage.getPlaka() + " plakalı araç zaten garajda...");
         else if(garagealanrepo.count()==0)
             throw new TanımlıGarajNotExistsException("Tanımlı garaj boyutu yok");
         else {
-            newGarage.setAlan(getAracTip(tip, plaka).getAlan());
-            newGarage.setPlaka(plaka);
-            newGarage.setTip(tip);
+            // Veritabanında bulunan garage tablosuna veri girişi yapılacağından dolayı tanımlandı.
+            Garage newGarage = new Garage();
 
+            // garage tablosunda bulunan değerler atandı.
+            // garage.getTip() metodu ile veriler soyut AracFabrikasina veriler gönderilerek
+            // AracFabrikasının alt metotlarından girilen arac tipine göre kapladığı alan belirlendi.
+            newGarage.setAlan(getAracTip(garage.getTip(), garage.getPlaka()).getAlan());
+            newGarage.setPlaka(garage.getPlaka());
+            newGarage.setTip(garage.getTip());
+
+            // Giriş yapıldıktan sonra garaj sınıfından boyut girilen boyut düşürüldü.
             garaj.setGarajBoyut(garaj.getGarajBoyut() - newGarage.getAlan());
 
             return new ResponseEntity<>(garagerepo.save(newGarage), OK);

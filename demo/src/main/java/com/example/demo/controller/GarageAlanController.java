@@ -118,4 +118,9 @@ public class GarageAlanController {
     public ResponseEntity<String> handleGarajboyutNotFoundException(GarajboyutNotFoundException ex){
         return new ResponseEntity<>(ex.getMessage(), NOT_FOUND);
     }
+
+    @ExceptionHandler(GirisNotAcceptableException.class)
+    public ResponseEntity<String> handleGirisNotAcceptableException(GirisNotAcceptableException ex){
+        return new ResponseEntity<>(ex.getMessage(), NOT_FOUND);
+    }
 }

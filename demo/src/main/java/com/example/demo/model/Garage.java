@@ -1,15 +1,13 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenerationTime;
 
 import javax.persistence.*;
-import java.util.UUID;
 
 @Data
 @Entity
@@ -20,6 +18,7 @@ public class Garage {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @ApiModelProperty(value = "Unique id field of Islem object")
+    @JsonIgnore
     private Integer id;
     @ApiModelProperty(value = "tip field of Islem object")
     private int tip;
